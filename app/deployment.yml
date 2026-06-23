@@ -3,24 +3,18 @@ kind: Deployment
 metadata:
   name: project
   namespace: project-dev
-  
 spec:
   replicas: 2
-
-  selectors:
-    matchLabels: 
+  selector:
+    matchLabels:
       app: project
-  
-
   template:
-    metadata: 
-      app: project
-
-      
+    metadata:
+      labels:
+        app: project
     spec:
-      containers: 
-        name: project
-        image: jaydevopswork/project:v1
-        ports:
-          containerPort: 80
-    
+      containers:
+        - name: project
+          image: jaydevopswork/project:v3
+          ports:
+            - containerPort: 80

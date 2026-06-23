@@ -5,11 +5,9 @@ metadata:
   namespace: project-dev
 spec:
   type: NodePort
-  
-  selectors: 
+  selector:
     app: project
-  ports: 
-    port: 80
-    targetPort: 80
-    nodePort: 30080
-
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
